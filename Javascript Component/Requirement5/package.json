@@ -1,0 +1,11 @@
+{
+  "name": "requirement5",
+  "version": "1.0.0",
+  "description": "startsWith and endsWith extension methods for String type",
+  "main": "stringExtensions.js",
+  "scripts": {
+    "test": "node tests.js"
+  },
+  "author": "Bogdan Radacina",
+  "license": "ISC"
+}
