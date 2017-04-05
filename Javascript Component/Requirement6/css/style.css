@@ -1,0 +1,19 @@
+
+/* blink-me from http://stackoverflow.com/questions/16344354/how-to-make-blinking-flashing-text-with-css3 */
+.blink-me {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {  
+  50% { opacity: 0; }
+}
+
+/* fade transition from https://vuejs.org/v2/guide/transitions.html */
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 2s
+}
+
+.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+  opacity: 0
+}

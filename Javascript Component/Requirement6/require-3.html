@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>CM JS dev, requirement 6</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="css/style.css" rel="stylesheet" media="screen">
+    </head>
+    <body>
+        <div id="app" class="container" style="padding-top:30px">
+            <div v-if="shouldShowLoadButton()">
+                <p><a href="#" v-on:click="loadIssues">Load the current issues list</a></p>
+            </div>
+            <div v-if="shouldShowLoading()" class="blink-me">
+                Loading...
+            </div>
+            <transition name="fade">
+                <div v-if="shouldShowResults()" id="results">
+                    
+                    <div v-if="!hasIssues() && !hasError()" class="no-issues-template">
+                        Everybody is happy!
+                    </div>
+                    
+                    
+                    <template v-if="hasIssues() && !hasError()">
+                            <issue v-for="item in results" :key="item.id"
+                                v-bind:item="item" />
+                        
+                    </template>
+
+                    
+                    <div v-if="hasError()" class="issues-error">
+                        Error loading issues!
+                    </div>
+                </div>
+            </transition>
+        </div>
+        
+        <script src="scripts/moment.min.js"></script></div>
+        <script src="scripts/vue.js"></script>
+        <script src="scripts/vue-resource.min.js"></script>
+        <script src="scripts/update_component.js"></script>
+        <script src="scripts/issue_component.js"></script>
+        <script src="scripts/app.js"></script>
+    </body> 
+</html>
